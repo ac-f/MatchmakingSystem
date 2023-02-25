@@ -26,26 +26,14 @@ public class Individual {
   }
 
   // operation
-  public List<Individual> makeStrategy(List<Individual> individuals, String strategy, Boolean isReverse) {
-    Comparator<Individual> order = null;
-    switch (strategy) {
-      //TODO FORCE: 行為變動性 行為擴充性
-      case "DISTANCE_BASE" -> order = Comparator.comparing(individual -> this.getCoords().getDistance(individual.getCoords()));
+  public List<Individual> makeStrategy(List<Individual> individuals, StrategyInterface strategy, Boolean isReverse) {
+    var list = strategy.makeStrategy(this, individuals);
+    if (isReverse) Collections.reverse(list);
+    return list;
+  }
 
-      case "HABIT_BASE" -> {
-        order = Comparator.comparingInt(individual -> {
-          Set<String> set = new HashSet<>(this.getHabits());
-          set.retainAll(individual.getHabits());
-          return set.size();
-        });
-        order = order.reversed();
-      }
-    }
-    if (isReverse) order.reversed();
-    return individuals
-            .stream()
-            .sorted(order)
-            .toList();
+  public void getStrategyResult(Individual targetIndividual, StrategyInterface strategy) {
+    strategy.getStrategyResult(this, targetIndividual);
   }
 
   // getter & setter
