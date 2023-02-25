@@ -1,6 +1,12 @@
+/*
+ * Copyright (c) 2023
+ * author: ac-f
+ * email: fantasy1621821@gmail.com
+ * website: https://ac-f.io/
+ */
+
 import java.text.MessageFormat;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class MatchmakingSystem {
   private final List<Individual> individuals = new ArrayList<>();
@@ -16,6 +22,7 @@ public class MatchmakingSystem {
       System.out.println(msg);
       switch (strategyType) {
         //TODO FORCE
+
         case "DISTANCE_BASE":
           var distance = individual.getCoords().getDistance(resultList.get(0).getCoords());
           System.out.println("他們的距離是：" + distance);
