@@ -27,7 +27,6 @@ public class Individual {
 
   // operation
   public List<Individual> makeStrategy(List<Individual> individuals, String strategy, Boolean isReverse) {
-    List<Individual> list = new ArrayList<>();
     Comparator<Individual> order = null;
     switch (strategy) {
       //TODO FORCE: 行為變動性 行為擴充性
@@ -42,7 +41,6 @@ public class Individual {
         order = order.reversed();
       }
     }
-    assert order != null;
     if (isReverse) order.reversed();
     return individuals
             .stream()
