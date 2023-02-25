@@ -4,6 +4,6 @@
 
 ## UML
 ### OOA
-![image](C2M2H1你的配對策略是什麼呢OOA.png)
+![image](C2M1H1你的配對策略是什麼呢OOA.png)
 ### OOD
-![image](C2M2H1你的配對策略是什麼呢OOD.png)
+![image](C2M1H1你的配對策略是什麼呢OOD.png)
